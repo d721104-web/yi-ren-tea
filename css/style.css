@@ -218,6 +218,98 @@ hr.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
 .meta-list-4 .label { font-weight: 700; color: var(--leaf); width: 84px; flex-shrink: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* ==========================================================================
+   Fridge program — interactive profit calculator
+   ========================================================================== */
+.fridge-calc {
+  max-width: var(--col);
+  margin: 40px auto 0;
+  background: #FAFAF7;
+  border-radius: 24px;
+  padding: 40px;
+}
+.fridge-slider-label { font-weight: 700; font-size: 15px; margin-bottom: 18px; display: block; }
+.fridge-slider {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 8px; border-radius: 100px;
+  background: var(--rule); outline: none; margin-bottom: 14px; cursor: pointer;
+}
+.fridge-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--leaf); border: 3px solid var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.28); cursor: pointer;
+}
+.fridge-slider::-moz-range-thumb {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--leaf); border: 3px solid var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.28); cursor: pointer;
+}
+.fridge-slider-value { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+.fridge-slider-value .val { background: var(--ink); color: var(--paper); padding: 7px 18px; border-radius: 100px; font-weight: 700; font-size: 15px; }
+.fridge-result-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; border-radius: 14px; margin-bottom: 12px; gap: 16px; }
+.fridge-result-row.host { background: var(--paper); border: 1.5px solid var(--rule); }
+.fridge-result-row.hq { background: var(--ink); }
+.fridge-result-row .flabel { font-weight: 700; font-size: 14px; }
+.fridge-result-row.hq .flabel { color: #d8d9d0; }
+.fridge-result-row .amount { font-weight: 900; font-size: 21px; white-space: nowrap; }
+.fridge-result-row.host .amount { color: var(--leaf); }
+.fridge-result-row.hq .amount { color: #FFD84D; }
+.fridge-note { font-size: 12px; color: var(--muted); margin-top: 16px; line-height: 1.8; }
+
+.venue-entry {
+  max-width: var(--col); margin: 0 auto 40px; padding: 0 24px;
+  display: flex; gap: 20px; align-items: flex-start; text-align: left;
+}
+.venue-entry:last-child { margin-bottom: 0; }
+.venue-icon {
+  width: 56px; height: 56px; border-radius: 16px; background: #FAFAF7;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--leaf);
+}
+.venue-entry h4 { font-weight: 900; font-size: 18px; margin-bottom: 6px; }
+.venue-entry p { color: var(--muted); font-size: 14.5px; line-height: 1.75; }
+
+@media (max-width: 600px) {
+  .fridge-calc { padding: 28px 22px; }
+  .venue-entry { gap: 14px; }
+}
+
+/* ==========================================================================
+   Event catering — collaboration plan cards & tag lists
+   ========================================================================== */
+.event-hook {
+  display: inline-block;
+  margin-top: 18px;
+  font-weight: 900;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--leaf-deep, var(--leaf));
+  background: #FAFAF7;
+  padding: 10px 22px;
+  border-radius: 100px;
+}
+.tag-list {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 2.1;
+}
+.tag-list strong { color: var(--ink); font-weight: 700; }
+
+.plan-card {
+  max-width: var(--col); margin: 0 auto 28px; padding: 26px 28px;
+  background: #FAFAF7; border-radius: 18px; text-align: left;
+}
+.plan-card:last-child { margin-bottom: 0; }
+.plan-card .plan-name { font-weight: 900; font-size: 19px; margin-bottom: 12px; }
+.plan-card .plan-name .num { color: var(--leaf); margin-right: 6px; }
+.plan-card p { font-size: 14.5px; color: var(--muted); line-height: 1.8; margin-top: 6px; }
+.plan-card p strong { color: var(--ink); font-weight: 700; }
+
+.section-link-card {
+  max-width: var(--col); margin: 56px auto 0; padding: 30px 32px;
+  border: 1.5px solid var(--rule); border-radius: 18px; text-align: center;
+}
+.section-link-card p { font-size: 14.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.8; }
+
+/* ==========================================================================
    Footer — stacked, single column
    ========================================================================== */
 .footer-4 { padding: 90px 0 40px; border-top: 1px solid var(--rule); text-align: center; }

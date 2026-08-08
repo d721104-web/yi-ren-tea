@@ -48,4 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => { btn.textContent = original; newsletterForm.reset(); }, 2200);
     });
   }
+
+  // Fridge program profit calculator
+  const fridgeSlider = document.getElementById('fridge-slider');
+  if (fridgeSlider) {
+    const hostProfitPerCup = 20; // NT$65 avg price, ~30% margin to host
+    const valEl = document.getElementById('fridge-slider-val');
+    const hostEl = document.getElementById('fridge-host-profit');
+    const fmt = (n) => 'NT$ ' + n.toLocaleString('en-US');
+    function updateFridge() {
+      const cups = Number(fridgeSlider.value);
+      valEl.textContent = cups + ' 杯 / 日';
+      hostEl.textContent = fmt(cups * hostProfitPerCup * 30);
+    }
+    fridgeSlider.addEventListener('input', updateFridge);
+    updateFridge();
+  }
 });
